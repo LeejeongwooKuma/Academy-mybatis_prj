@@ -9,8 +9,8 @@ import lombok.ToString;
 @Setter
 @ToString
 public class EmpAllDomain {
-	private int empno,			mgr,		sal,	comm,	deptno;
-	private String ename,job;
+	private int empno,		mgr,		sal,	comm,	deptno;
+	private String ename, job, officeType;
 	private Date hiredate;
 
 }

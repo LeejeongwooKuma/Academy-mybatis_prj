@@ -5,7 +5,7 @@
 <%@page import="day1224.SelectService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <h3>like의 사용</h3>
 <script type="text/javascript">
 $(function(){
@@ -15,7 +15,7 @@ $(function(){
 });//ready
 </script>
 <form name="frm" id="frm" action="index.jsp">
-<input type="hidden" name="url" value="${param.url }"/>
+<input type="hidden" name="url" value="${ param.url }"/>
 <label for="dong">동이름</label>
 <input type="text" name="dong"/>
 <input type="button" value="검색" class="btn btn-info btn-sm" id="btn"/>
@@ -26,12 +26,15 @@ $(function(){
 <c:if test="${ not empty param.dong }">
 <%
 String dong=request.getParameter("dong");
-SelectService2 ss2 = SelectService2.getInstance();
+
+SelectService2 ss2=SelectService2.getInstance();
+
 List<ZipcodeDomain> zipList=ss2.useLike(dong);
-pageContext.setAttribute("zipList", zipList);
+
+pageContext.setAttribute("zipList",  zipList);
 %>
 <c:out value="${ param.dong }"/>의 검색결과<br>
-<table class="talbe talbe-hover">
+<table class="table table-hover">
 <thead>
 <tr>
 <th style="width: 100px">우편번호</th>
@@ -39,20 +42,23 @@ pageContext.setAttribute("zipList", zipList);
 </tr>
 </thead>
 <tbody>
-	<c:if test="${empty zipList }">
+	<c:if test="${ empty zipList }">
 	<tr>
-	<td colspan="2" style="text-align:center">
-	<img src="images/na.jpg" style="width:300px; height:260px"/>
+	<td colspan="2" style="text-align: center">
+	<img src="images/na.jpg" style="width: 300px; height: 260px"/>
 	</td>
 	</tr>
 	</c:if>
-<c:forEach var="zd" items="${ zipList }" >
+	
+	<c:forEach var="zd" items="${ zipList }">
 	<tr>
-		<td><c:out value="${ zd.zipcode }"/></td>
-		<td><c:out value="${ zd.sido } ${ zd.gugun } ${zd.bunji }"/></td>
+		<td><c:out value="${ zd.zipcode }"/></td>	
+		<td><c:out value="${ zd.sido } ${ zd.gugun } ${ zd.dong } ${ zd.bunji }"/></td>	
 	</tr>
-</c:forEach>
+	</c:forEach> 
+
 </tbody>
 </table>
+
 </c:if>
 </div>

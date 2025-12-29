@@ -3,18 +3,19 @@ package day1226;
 import java.sql.Date;
 
 /**
- *	MyBatis Framework에서 조회되는 레코드가 있을 때 
- *	1. 기본생성자로 생성해주고
- *	2. 조회되는 컬럼명과 일치하는 setter method를 호출하여 값을 설정.
- *	3. JSP EL에서 ${ getter명 } 으로 보통 사용  
+ * MyBatis Framework에서 조회되는 레코드가 있을 때 
+ *  1.기본생성자로 생성해주고
+ *  2.조회되는 컬럼명과 일치하는 setter method를 호출하여 값을 설정 
+ *  3.JSP EL에서 ${ getter명} 으로 사용  
  */
 public class EmpDomain {
+	
 	private String ename;
-	private int empno ,sal, comm;
+	private int sal,comm;
 	private Date hiredate;
 	
 	public EmpDomain() {
-		System.out.println("MyBatis에 의해 EmpDomain 생성");
+		System.out.println("MyBatis에 의해 EmpDomain생성");
 	}
 
 	public String getEname() {
@@ -53,16 +54,19 @@ public class EmpDomain {
 	}
 
 	public void setHiredate(Date hiredate) {
-		System.out.println("MyBatis에서 조회결과가 있을 때 setComm 사용");
+		System.out.println("MyBatis에서 조회결과가 있을 때 setHiredate 사용");
 		this.hiredate = hiredate;
-	}
-
-	public int getEmpno() {
-		return empno;
-	}
-
-	public void setEmpno(int empno) {
-		this.empno = empno;
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
