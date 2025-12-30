@@ -12,7 +12,6 @@ request.setCharacterEncoding("UTF-8");
 //web parameter로 title, content가 입력되고,
 //그외, IP-request내장객체, ID-session에서 얻어야 한다.
 bDTO.setIp( request.getRemoteAddr() );
-bDTO.setId( (String)session.getAttribute("userId") );
 
 BoardService bs=BoardService.getInstance();
 boolean flag=bs.modifyBoard(bDTO);
