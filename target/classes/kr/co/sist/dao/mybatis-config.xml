@@ -22,6 +22,7 @@
 <typeAlias type="kr.co.sist.board.RangeDTO" alias="rangeDTO"/>
 
 <typeAlias type="day1230.TransactionDTO" alias="transactionDTO"/>
+<typeAlias type="day1231.MemberDTO" alias="memberDTO"/>
 
 </typeAliases>
   <environments default="development">
@@ -43,6 +44,7 @@
     <mapper resource="day1226/examMapper4.xml"/><!-- select 연습 -->
     <mapper resource="day1229/examMapper5.xml"/><!-- subquery&join 연습 -->
     <mapper resource="day1230/examMapper6.xml"/><!-- choose 연습 -->
+    <mapper resource="day1231/examMapper7.xml"/><!-- procedure 연습 -->
     
     <mapper resource="kr/co/sist/board/boardMapper.xml"/><!-- 게시판 쿼리 -->
     <mapper resource="kr/co/sist/car/carMapper.xml"/><!-- 자동차 업무 -->

@@ -17,6 +17,8 @@ import day1226.SelectDAO2;
 import day1229.SelectDAO3;
 import day1230.SelectDAO4;
 import day1230.TransactionDTO;
+import day1231.MemberDTO;
+import day1231.SelectDAO5;
 import kr.co.sist.board.BoardDAO;
 import kr.co.sist.board.RangeDTO;
 import kr.co.sist.car.CarDAO;
@@ -52,7 +54,8 @@ public class Test {
 //		CarDAO cDAO = CarDAO.getInstance();
 //		SelectDAO3 sd3 = SelectDAO3.getInstance();
 //		BoardDAO bDAO = BoardDAO.getInstance();
-		SelectDAO4 sd4 = SelectDAO4.getInstance();
+//		SelectDAO4 sd4 = SelectDAO4.getInstance();
+		SelectDAO5 sd5 = SelectDAO5.getInstance();
 		try {
 		//assertNotNull(sDAO.useLike("대치동"));
 //			assertNotNull(sDAO.greaterThan(3000));
@@ -84,12 +87,38 @@ public class Test {
 //			e.setSal(1270);
 ////			e.setJob("영업");
 //			assertNotNull(sd4.dynamicSet(e));
-			TransactionDTO tDTO = new TransactionDTO();
-			tDTO.setName("민병");
-			tDTO.setAddress("서울시 동");
+//			TransactionDTO tDTO = new TransactionDTO();
+//			tDTO.setName("민병");
+//			tDTO.setAddress("서울시 동");
 			
 //			assertNotNull(sd4.transaction(tDTO));
-			assertNotNull(sd4.transaction2(tDTO));
+//			assertNotNull(sd4.transaction2(tDTO));
+
+//			MemberDTO mDTO = new MemberDTO();
+//			mDTO.setNum(83);
+//			mDTO.setName("렌코쿠");
+//			mDTO.setAge(35);
+//			mDTO.setGender("남자");
+//			mDTO.setTel("010-5555-3333");
+			
+//			sd5.insertMember(mDTO);
+//			sd5.updateMember(mDTO);
+//			sd5.deleteMember(mDTO);
+//			int cnt= mDTO.getCnt();
+//			assertSame(cnt,1);
+			
+			HashMap<String, Object> map=new HashMap<String, Object>();
+//			map.put("num", 82);
+			
+//			sd5.selectOneMember(map);
+			sd5.selectAllMember(map);
+			
+//			List<Map<String, Object>> data = (List<Map<String, Object>>)map.get("searchMember");
+			List<Map<String, Object>> data = (List<Map<String, Object>>)map.get("searchAllMember");
+			
+			System.out.println(data);
+			assertNotNull(data);
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
